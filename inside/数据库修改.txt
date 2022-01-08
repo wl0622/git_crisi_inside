@@ -1,0 +1,32 @@
+1.添加表
+  t_errorLoginRecord
+   UserGroupsRights
+   UserRights
+   OperatorLog
+   t_loginLog
+   siteCfg
+
+2.修改表
+  
+   表 Users 字段 修改 userPassword长度 为nvarchar(80)
+                 修改 UserID 为自增列
+
+   表 Department 字段 添加自增 DepartmentID int 
+
+   表 Article 字段 添加isElite bit
+                   添加 picID int
+                   取消 hits字能不能为空
+                   取消 isexarticle 不能为空
+                   取消 isTop 不能为空
+                   取消 isspecialtop 不能为空
+                   添加 repostSubjectID varchar(20)
+                   添加 topExpireTime datetime
+
+   表 Special 取消 spID 自增列
+
+   表 Special 添加 isShowHome bit
+              添加 showSN int
+
+
+   
+   
