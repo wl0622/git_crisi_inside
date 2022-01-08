@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("GetTitleStyle", "DisplayLayout", new { name = "长江科学院内网-专题" })
+@model List<crsri.cn.Model.t_web_special_model>
+
+<div class="subbg"></div>
+<div class="contentbox sub_cnt">
+    <div class="sub_left_banner sub_special_bg">
+        <div class="siteNav fix">
+            <div class="l fix zy_cur">
+                <div class="l tit mt-40"><img src="/images/icon_location.png"><b class="dib vm">当前位置：</b></div>
+                <p class="l mt-40"><a href="/Home/index">首页</a><a><span>专题专栏</span></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="sp_list_r">
+
+        <!-- 右边内容 -->
+        <div class="sp_list_r_con sp_list_bg">
+
+            <!-- 当前位置 -->
+            <div class="zy_title fix">
+                <h2>专题专栏<i></i></h2>
+            </div>
+            <!-- 内容展示块-->
+            <div class="news_list zy_listbox">
+
+                <ul>
+                    @{
+                        foreach (crsri.cn.Model.t_web_special_model m in Model)
+                        {
+                            <li><b>·</b><a href="@m.linkUrl" target="_blank">@System.Web.HttpUtility.HtmlDecode(m.specialName)</a><span></span></li>
+                        }
+                    }
+                </ul>
+
+                <!-- 通用分页end -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fix"></div>

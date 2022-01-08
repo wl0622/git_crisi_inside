@@ -1,0 +1,302 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    font-family: SimSun;
+    background: url(/images/jhxy/main_bg.jpg) no-repeat;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.bg {
+    width: 1280px;
+    margin: auto;
+    min-height: 1621px;
+    padding: 0px;
+}
+
+.bg_box {
+    background: url(/images/jhxy/box.png) no-repeat top 192px center;
+    width: 1280px;
+    height: 1421px;
+    display: block;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.topMenu {
+    width: 442px;
+    height: 87px;
+    background: url(/images/jhxy/top_menu.png) no-repeat;
+    margin: auto;
+    display: block;
+    margin-top: 145px;
+}
+
+    .topMenu ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .topMenu ul li {
+            list-style-type: none;
+            float: left;
+            margin-left: 10px;
+        }
+
+.cnt_box {
+    width: 1080px;
+    margin: auto;
+    font-family: 'Microsoft YaHei';
+}
+
+.left_box_menu {
+    width: 260px;
+    float: left;
+    background: url(/images/jhxy/left_catalogue.png) no-repeat center center;
+    height: 1154px;
+    margin-left: 15px;
+}
+
+.left_tit {
+    width: 206px;
+    margin: auto;
+    font-size: 16px;
+    color: #46554d;
+    font-weight: bold;
+    margin-top: 248px;
+}
+
+    .left_tit > span {
+        width: inherit;
+        text-align: center;
+        display: block;
+    }
+
+.h_sp {
+    width: inherit;
+    height: 30px;
+    background: url(/images/jhxy/h_sp.png) no-repeat center center;
+}
+
+.left_query_tit {
+    width: 206px;
+    margin: auto;
+    font-size: 16px;
+    color: #46554d;
+    font-weight: bold;
+    text-align: center;
+}
+
+.left_select {
+    width: 195px;
+    margin: auto;
+    height: 40px;
+}
+
+.left_select_ctl {
+    border: 0px;
+    background-color: #fff;
+    background: url(/images/jhxy/ddr_bg.png);
+    width: inherit;
+    height: inherit;
+    color: #46554d;
+    font-size: 14px;
+    text-indent: 2px;
+    margin-top: 5px;
+}
+
+.left_info {
+    width: 188px;
+    margin: auto;
+    font-size: 12px;
+}
+
+    .left_info ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .left_info ul li {
+            list-style-type: none;
+            text-align: center;
+            width: inherit;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+        }
+
+.right_list {
+    width: 778px;
+    float: left;
+}
+
+    .right_list ul {
+        margin: 0px;
+        padding: 0px;
+        min-height: 1050px;
+    }
+
+        .right_list ul li {
+            list-style-type: none;
+            display: flex;
+            margin-top: 10px;
+            line-height: 25px;
+        }
+
+
+            .right_list ul li > span {
+                float: left;
+                align-self: center;
+            }
+
+            .right_list ul li span:first-child {
+                border-radius: 50%;
+                width: 4px;
+                height: 4px;
+                background-color: #46554d;
+                align-self: center;
+            }
+
+            .right_list ul li span:nth-child(2) {
+                width: 590px;
+                margin-left: 10px;
+                border-bottom: 1px dashed #46554d;
+            }
+
+            .right_list ul li span:nth-child(3) {
+                width: 170px;
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+
+.xu, .ckc, .tz, .hc {
+    width: 770px;
+    border: 2px solid #c4e7cf;
+    float: left;
+    height: 1136px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 14px;
+}
+
+.xu_head, .ckc_head {
+    width: 494px;
+    height: 75px;
+    margin: auto;
+    margin-top: 18px;
+}
+
+.xu_head_bg {
+    background-image: url(/images/jhxy/xu_head.png);
+}
+
+.ckc_head_bg {
+    background-image: url(/images/jhxy/ckc_head.png);
+}
+
+.xu_author, .ckc_author, .tz_author {
+    font-size: 18px;
+    font-weight: bold;
+    color: #467164;
+    text-align: center;
+    margin-top: 26px;
+}
+
+.xu_cnt, .ckc_cnt {
+    font-size: 16px;
+    margin: 20px 12px 0px 12px;
+}
+
+    .xu_cnt p, .ckc_cnt p {
+        text-indent: 2em;
+        line-height: 30px;
+    }
+
+
+.tz_img {
+    width: 490px;
+    height: 893px;
+    margin: auto;
+    background-image: url(/images/jhxy/tz.png);
+    margin-top: 16px;
+}
+
+.hc_img {
+    width: 518px;
+    height: 911px;
+    margin: auto;
+    background-image: url(/images/jhxy/hc.png);
+    margin-top: 16px;
+}
+
+
+.fenye {
+    text-align: center;
+    margin-top: 50px;
+    height: 60px;
+    width: 750px;
+    float: right;
+}
+
+    .fenye ul {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .fenye span, .fenye a {
+        display: inline-block;
+        padding: 0 9px;
+        margin: 0 2px;
+        border-radius: 2px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        color: #48554e;
+        float: left;
+        border: 1px solid #48554e;
+        background: url(/images/jhxy/fenyebtnbg.png) repeat;
+        font-size: 14px;
+    }
+
+        .fenye a.current {
+            background: #c3e7cf;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .fenye a:hover {
+            background: #c3e7cf;
+            color: #fff;
+        }
+
+    .fenye input {
+        width: 30px;
+    }
+
+
+.show {
+    width: 770px;
+    border: 2px solid #c4e7cf;
+    float: left;
+    height: 1136px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 14px;
+}
+
+.show_cnt {
+    margin: 20px 20px 0px 20px;
+    height: 1110px;
+    overflow-x: hidden;
+    overflow: auto;
+}
+
+    .show_cnt p {
+        text-indent: 2em;
+        line-height: 30px;
+    }

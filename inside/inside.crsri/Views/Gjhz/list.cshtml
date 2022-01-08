@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "list";
+    Layout = "~/Views/Shared/_Layout_GJHZ.cshtml";
+}
+@model List<crsri.cn.Model.t_web_article_model>
+<style type="text/css">
+    body {
+        background-color: #f4f4f4;
+    }
+</style>
+
+
+<div class="gjhz_list_cnt">
+
+    <div class="gjhz_l_menu">
+        <img src="/images/gjhz/listmenu.png" style="width:280px;" />
+        <ul>
+            @{
+                List<crsri.cn.Model.t_web_special_model> gjhzItems = ViewBag.gjhzItems as List<crsri.cn.Model.t_web_special_model>;
+                string curId = ViewBag.specialID;
+                string curItemName = gjhzItems.FindAll(a => a.specialID == curId).First().specialName;
+
+                foreach (crsri.cn.Model.t_web_special_model m in gjhzItems)
+                {
+                    string css = m.specialName == curItemName ? "class=on" : "";
+                    <li @css><a href="/gjhz/list/@m.specialID">@m.specialName</a></li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="gjhz_r_box">
+        <div class="gjhz_r_box_head ">
+            <div class="gjhz_r_box_tit">
+                <span class="gjhz_r_box_tit_txt">
+                    @{
+
+
+                        <label>@curItemName</label>
+                    }
+                </span>
+            </div>
+        </div>
+        <div class="list_item">
+            <ul>
+                @{
+                    foreach (crsri.cn.Model.t_web_article_model m in Model)
+                    {
+                        <li>
+                            <i></i><a href="/gjhz/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                @System.Web.HttpUtility.HtmlDecode(@m.title)
+                            </a>
+                        </li>
+                    }
+                }
+
+
+            </ul>
+        </div>
+
+        <div class="fenye">
+
+            @{
+                int pageSize = 20;
+                int totalCount = Convert.ToInt32(ViewBag.totalCount);
+                int maxPage = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
+
+                if (maxPage > 1)
+                {
+                    int curPage = Convert.ToInt32(ViewBag.currentPage);
+                    int showPage = maxPage < 3 ? maxPage : 3;
+                    List<int> txtPageNum = new List<int>();
+                    if (maxPage <= showPage)
+                    {
+                        for (int i = 1; i <= maxPage; i++)
+                        {
+                            txtPageNum.Add(i);
+                        }
+                    }
+                    else
+                    {
+                        int startNum = curPage > 2 ? curPage - 2 : 1;
+
+                        for (int i = startNum; i <= startNum + 2; i++)
+                        {
+                            txtPageNum.Add(i);
+                        }
+
+
+                    }
+
+                    int prePage = curPage - 1;
+                    int nextPage = curPage + 1;
+                    int hidePage = txtPageNum.Last();
+
+                    string htmlPre = string.Format("<a href='/gjhz/list/{0}/{1}'>上一页</a>", Model.First().specialID, prePage == 0 ? 1 : prePage);
+                    string htmlNext = string.Format("<a href='/gjhz/List/{0}/{1}'>下一页</a>", Model.First().specialID, nextPage > maxPage ? maxPage : nextPage);
+                    string htmlInfo = string.Format("<span>共{0}页</span>", maxPage);
+                    string htmlGo = string.Format("<span>转到第<input type='text'>页</span><a href='javascript:goPage();' class='ok'>确定</a></div>");
+
+                    @Html.Raw(htmlPre);
+
+                                      foreach (int num in txtPageNum)
+                                      {
+                                          if (num == curPage)
+                                          {
+                                            @Html.Raw(string.Format("<a href='/gjhz/list/{0}/{1}' class='current'>{1}</a>", Model.First().specialID, num));
+                                          }
+                                          else
+                                          {
+                                            @Html.Raw(string.Format("<a href='/gjhz/list/{0}/{1}'>{1}</a>", Model.First().specialID, num));
+                                          }
+                                      }
+                                    <a href="/gjhz/List/@Model.First().specialID/@hidePage">...</a>
+                                    <a href="/gjhz/List/@Model.First().specialID/@maxPage">@maxPage</a>
+
+                                    @Html.Raw(htmlNext);
+
+                }
+
+            }
+        </div>
+    </div>
+
+
+</div>

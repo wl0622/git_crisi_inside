@@ -1,0 +1,61 @@
+﻿<script type="text/javascript">
+    $(function () {
+
+        $(".left_select_ctl").change(function () {
+
+            let val = $(".left_select_ctl").val();
+            window.location.href = '/jhxy/index/'+val;
+
+        });
+    });
+</script>
+<div class="left_box_menu">
+    <div class="left_tit">
+        @{
+            crsri.cn.Model.t_web_jhxy_model curItems = ViewBag.jhxyItemsCur as crsri.cn.Model.t_web_jhxy_model;
+            if (curItems != null)
+            {
+                <span> @curItems.volume_name.Split(' ').First()</span>
+                <span>@curItems.volume_name.Split(' ')[1]</span>
+            }
+        }
+
+    </div>
+    <div class="h_sp"></div>
+    <div class="left_query_tit">
+        期刊查询
+    </div>
+    <div class="left_select">
+        <select class="left_select_ctl">
+            <option>请选择期次</option>
+            @{
+                List<crsri.cn.Model.t_web_jhxy_model> Model = ViewBag.listItems == null ? inside.crsri.Dal.jhxyDal.requestJHXYItems() : ViewBag.listItems as List<crsri.cn.Model.t_web_jhxy_model>;
+
+                foreach (crsri.cn.Model.t_web_jhxy_model m in Model)
+                {
+                    <option value="@m.id">@m.volume_name</option>
+                }
+            }
+
+        </select>
+    </div>
+    <div class="h_sp" style="margin-top:10px;"></div>
+    <div class="left_info">
+        <ul>
+            <li>编印单位: 长江委长江科学院</li>
+            <li>编委会主任: 吴志广</li>
+            <li>特邀顾问: 郭熙灵 徐德毅</li>
+            <li>副主任: 沙志贵 赖跃强</li>
+            <li>委员: 唐文坚 王迎春 谢兵 赖跃强</li>
+            <li>编辑出版:《江花心语》编辑部</li>
+            <li>主任: 黄玲</li>
+            <li>常务副主任: 陈琴</li>
+            <li>邮政编码: 430010</li>
+            <li>投稿网址:<a href="http://10.6.66.110/journalx_jhxy"> 江花心语投稿</a></li>
+            <li>本刊地址: 武汉市江大路路口九万方</li>
+            <li>电子信箱: jhxy027wh@163.com</li>
+            <li>电话: 027-82829859</li>
+        </ul>
+    </div>
+</div>
+

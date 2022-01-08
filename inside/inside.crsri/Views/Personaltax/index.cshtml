@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+@model inside.crsri.Utility.requestHomeArticleClass
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>个人所得税专栏文件</title>
+    <link rel="stylesheet" href="/Content/themes/crsri/css/page.css" />
+    <link rel="stylesheet" href="/Content/themes/crsri/css/footerbox.css" />
+</head>
+<body style="background: #f7f8fa;height:100%">
+    <div class="tax_head_box">
+        <div class="tax_head"></div>
+    </div>
+    <div class="tax_list">
+        <div class="tax_list_child">
+            <ul>
+
+                @{
+                    foreach (inside.crsri.Utility.HomeArticleClass m in Model.articleList)
+                    {
+                        <li>
+                            <i class="icon"></i>
+                            <a href="/Personaltax/show/@inside.crsri.Utility.helper.UrlEncry(m.articleID)" target="_blank"> @System.Web.HttpUtility.HtmlDecode(m.title)</a>
+                        </li>
+                    }
+                }
+
+            </ul>
+
+
+
+        </div>
+    </div>
+
+
+
+    <div class="tax_footer">
+        <div class="tax_footer_c">
+            <p> 主办：长江科学院财务处   &nbsp;&nbsp; 支持：长江科学院信息中心 &nbsp;&nbsp; 电话：82926349</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_JHXY.cshtml";
+}
+
+@model List<crsri.cn.Model.t_web_article_model>
+<div class="right_list">
+    <ul>
+        @{
+            foreach (crsri.cn.Model.t_web_article_model m in Model)
+            {
+                <li>
+                    <span></span>
+                    <span><a href="/jhxy/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">@System.Web.HttpUtility.HtmlDecode(@m.title)</a> </span>
+                    <span>@System.Web.HttpUtility.HtmlDecode(@m.author)</span>
+                </li>
+            }
+        }
+    </ul>
+
+    <div class="fenye">
+        @{
+            int pageSize = 25;
+            int totalCount = Convert.ToInt32(ViewBag.totalCount);
+            int maxPage = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
+
+            if (maxPage > 1)
+            {
+                int curPage = Convert.ToInt32(ViewBag.currentPage);
+                int showPage = maxPage < 3 ? maxPage : 3;
+                List<int> txtPageNum = new List<int>();
+                if (maxPage <= showPage)
+                {
+                    for (int i = 1; i <= maxPage; i++)
+                    {
+                        txtPageNum.Add(i);
+                    }
+                }
+                else
+                {
+                    int startNum = curPage > 2 ? curPage - 2 : 1;
+
+                    for (int i = startNum; i <= startNum + 2; i++)
+                    {
+                        txtPageNum.Add(i);
+                    }
+
+
+                }
+
+                int prePage = curPage - 1;
+                int nextPage = curPage + 1;
+                int hidePage = txtPageNum.Last();
+
+                string htmlPre = string.Format("<a href='/jhxy/index/{0}/{1}'>上一页</a>", Model.First().JHXYid, prePage == 0 ? 1 : prePage);
+                string htmlNext = string.Format("<a href='/jhxy/index/{0}/{1}'>下一页</a>", Model.First().JHXYid, nextPage > maxPage ? maxPage : nextPage);
+                string htmlInfo = string.Format("<span>共{0}页</span>", maxPage);
+                string htmlGo = string.Format("<span>转到第<input type='text'>页</span><a href='javascript:goPage();' class='ok'>确定</a></div>");
+
+                @Html.Raw(htmlPre);
+
+                                  foreach (int num in txtPageNum)
+                                  {
+                                      if (num == curPage)
+                                      {
+                                        @Html.Raw(string.Format("<a href='/jhxy/index/{0}/{1}' class='current'>{1}</a>", Model.First().JHXYid, num));
+                                      }
+                                      else
+                                      {
+                                        @Html.Raw(string.Format("<a href='/jhxy/index/{0}/{1}'>{1}</a>", Model.First().JHXYid, num));
+                                      }
+                                  }
+                                <a href="/jhxy/index/@Model.First().JHXYid/@hidePage">...</a>
+                                <a href="/jhxy/index/@Model.First().JHXYid/@maxPage">@maxPage</a>
+
+                                @Html.Raw(htmlNext);
+            @*<p>
+                    @Html.Raw(htmlGo);
+                </p>*@
+            }
+
+        }
+    </div>
+</div>

@@ -1,0 +1,534 @@
+
+
+.head {
+    background-image: url(/images/aqsc/banner1920.png);
+    width: 1920px;
+    height: 486px;
+}
+
+.container {
+    background-image: url(images/10.jpg);
+    width: 1280px;
+    height: 1600px;
+    margin: auto;
+}
+
+.footer {
+    height: 120px;
+    line-height: 120px;
+    background-image: linear-gradient(#049546, #35b75c);
+    width: 1280px;
+    margin: auto;
+}
+
+.footer_c {
+    width: 568px;
+    margin: auto;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.footer span {
+    font-size: 14px;
+    color: #fff;
+}
+
+.content {
+    width: 1280px;
+    margin: auto;
+    background: url(/images/aqsc/bg1300_2.png);
+    height: 1300px;
+    margin-top: -150px;
+}
+
+.lbox_1 {
+    width: 1010px;
+    padding-top: 10px;
+}
+
+.ztxw_box {
+    width: 495px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius: 30px 30px 0px 0;
+    float: left;
+}
+
+.ztxw_box_head {
+    margin-top: -20px;
+    height: 30px;
+}
+
+    .ztxw_box_head h3 {
+        width: 228px;
+        margin: auto;
+        color: #fff;
+        /*background-color: #049546;*/
+        background-image: linear-gradient(#049546, #35b75c);
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50px 0px 50px 0px;
+        border: 1px solid #afc08f;
+    }
+
+
+.fivestar_icon {
+    background: url(/images/aqsc/fivestar_tit.png);
+}
+
+.hexagon_icon {
+    background: url(/images/aqsc/hexagon_tit.png);
+}
+
+.icon_tit {
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.wjdd_box {
+    width: 495px;
+    height: 300px;
+    border: 2px solid #fff; /*afc08f*/
+    border-radius: 30px 30px 0px 0;
+    float: left;
+}
+
+.wjdd_box_head {
+    margin-top: -45px;
+    height: 72px;
+    position: relative;
+    width: 230px;
+}
+
+.wjdd_tit {
+    width: 200px;
+    margin: auto;
+}
+
+.ml_10 {
+    margin-left: 10px;
+}
+
+.ml_30 {
+    margin-left: 30px;
+}
+
+.mt_100 {
+    margin-top: 100px;
+}
+
+.mt_35 {
+    margin-top: 35px;
+}
+
+.mt_10 {
+    margin-top: 10px;
+}
+
+
+.listItem {
+    clear: both;
+    font-size: 14px;
+    height: 255px;
+    overflow: hidden;
+}
+
+    .listItem ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .listItem ul li {
+            list-style-type: none;
+            width: 480px;
+            margin-bottom: 8px;
+            line-height: 22px;
+            display: table;
+            background-image: url(/images/aqsc/li_icon.png);
+            background-position: left 8px center;
+            background-repeat: no-repeat;
+            float: left;
+        }
+
+.listItem_title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    padding-left: 30px;
+    -webkit-line-clamp: 2;
+    width: 400px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
+
+
+
+.listItem_date {
+    color: #999;
+    font-size: 12px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.listItem a {
+    text-decoration: none;
+}
+
+
+.r {
+    float: right;
+}
+
+.l {
+    float: left;
+}
+
+.white_bg {
+    background-color: #fff;
+    width: 1240px;
+    height: 500px;
+    margin-left: 17px;
+    position: absolute;
+    margin-top: 70px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.rPic {
+    margin-left: 10px;
+}
+
+    .rPic ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .rPic ul li {
+            list-style-type: none;
+        }
+
+            .rPic ul li img {
+                width: 195px;
+                height: 295px;
+                height: inherit;
+            }
+
+
+.zw_box {
+    width: 1006px;
+    height: 170px;
+    border: 2px solid #fff;
+    float: left;
+}
+
+.zw_box_head {
+    margin-top: -20px;
+    height: 62px;
+}
+
+    .zw_box_head h3 {
+        width: 228px;
+        margin: auto;
+        color: #fff;
+        background-image: linear-gradient(#049546, #35b75c);
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50px 0px 50px 0px;
+        border: 1px solid #afc08f;
+    }
+
+
+
+.listItem_single {
+    clear: both;
+    font-size: 14px;
+}
+
+    .listItem_single ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .listItem_single ul li {
+            width: 480px;
+            float: left;
+            margin-left: 10px;
+            height: 30px;
+            line-height: 30px;
+            background: url(/images/aqsc/li_icon.png) no-repeat left center;
+            list-style-type: none;
+        }
+
+            .listItem_single ul li:nth-child(even) {
+                margin-left: 30px;
+            }
+
+.listItem_single_title {
+    width: 415px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 15px;
+    display: block;
+    float: left;
+}
+
+    .listItem_single_title a {
+        text-decoration: none;
+        color: #333;
+    }
+
+.listItem_single_date {
+    float: left;
+    width: 50px;
+    display: block;
+    font-size:12px;
+    color:#999;
+}
+
+
+.listItem_pic {
+    width: 670px;
+    margin: auto;
+}
+
+    .listItem_pic ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .listItem_pic ul li {
+            width: 160px;
+            float: left;
+            list-style-type: none;
+        }
+
+    .listItem_pic img {
+        width: 100px;
+        height: 70px;
+        margin: auto;
+        text-align: center;
+        display: block;
+    }
+
+    .listItem_pic a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .listItem_pic span {
+        font-size: 14px;
+        width: 140px;
+        display: block;
+        margin: auto;
+        text-align: center;
+        margin-top: 6px;
+    }
+
+
+.flink {
+    width: 600px;
+    margin: auto;
+    line-height: 150px;
+}
+
+    .flink ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .flink ul li {
+            float: left;
+            margin-left: 20px;
+            list-style: none;
+        }
+
+    .flink a {
+        text-decoration: none;
+        color: #333;
+    }
+
+
+
+
+.more {
+    font-size: 14px;
+    margin-top: -20px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+
+.more2 {
+    text-align: right;
+    margin-right: 15px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.more3 {
+    text-align: right;
+    margin-right: 15px;
+    font-size: 14px;
+    margin-top: -35px;
+    margin-bottom: 10px;
+}
+
+
+
+
+a {
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #ff6600;
+    }
+
+
+.list_head {
+    margin-top: -50px;
+    height: 75px;
+    line-height: 75px;
+    background: url(/images/aqsc/list_tbg.png);
+}
+
+    .list_head h3 {
+        margin-left: 50px;
+        color: #fff;
+    }
+
+.list_tit {
+    width: 1200px;
+    float: left;
+    margin-top: 130px;
+    margin-left: 30px;
+}
+
+.list_table_title {
+    width: 1098px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 15px;
+    display: block;
+    float: left;
+}
+
+
+.list_table {
+    width: 1120px;
+    margin: auto;
+}
+
+    .list_table ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .list_table ul li {
+            list-style-type: none;
+            height: 35px;
+            line-height: 35px;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed #999;
+            background-image: url(/images/aqsc/li_icon.png);
+            background-position: left 8px center;
+            background-repeat: no-repeat;
+            text-indent: 18px;
+        }
+
+            .list_table ul li a {
+                text-decoration: none;
+                color: #333;
+            }
+
+
+.fenye {
+    text-align: center;
+    margin-top: 50px;
+    height: 60px;
+    width: 750px;
+    float: right;
+}
+
+    .fenye ul {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .fenye span, .fenye a {
+        display: inline-block;
+        padding: 0 9px;
+        margin: 0 2px;
+        background: #efefef;
+        border-radius: 2px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        color: #000;
+        float: left;
+        border: 1px solid #049546;
+    }
+
+        .fenye a.current {
+            background: #35b75c;
+            color: #fff;
+        }
+
+        .fenye a:hover {
+            background: #9fcd6b;
+            color: #fff;
+        }
+
+    .fenye input {
+        width: 30px;
+    }
+
+
+.show_box {
+    width: 1240px;
+    float: left;
+    border-left: 17px solid #9ecd6d;
+    border-right: 23px solid #9ecd6d;
+    border-bottom: 20px solid #9ecd6d;
+    background: #d9e9c2;
+}
+
+    .show_box h1 {
+        width: 1100px;
+        margin: auto;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+.info {
+    padding-top: 20px;
+    width: 1100px;
+    margin: auto;
+    text-align: center;
+    border-bottom: 1px solid #33b55a;
+    height: 50px;
+    color: #666;
+    font-size:14px;
+}
+
+.show_c {
+    line-height: 32px;
+    width: 1130px;
+    margin: auto;
+    padding-top: 30px;
+}

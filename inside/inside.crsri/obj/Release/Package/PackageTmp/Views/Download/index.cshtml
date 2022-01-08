@@ -1,0 +1,273 @@
+﻿@{
+    Layout = null;
+}
+@model List<crsri.cn.Model.reqDownload>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>软件下载</title>
+    <link rel="stylesheet" href="/Content/themes/crsri/css/page.css" />
+    <link rel="stylesheet" href="/Content/themes/crsri/css/footerbox.css" />
+
+    <style type="text/css">
+        .section-title {
+            margin-bottom: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+            .section-title small {
+                display: block;
+                font-size: 42px;
+                text-transform: uppercase;
+            }
+
+            .section-title strong {
+                display: block;
+                position: relative;
+                color: #104492;
+                font-size: 30px;
+                margin-top: 10px;
+            }
+
+                .section-title strong:after {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    height: 1px;
+                    width: 86%;
+                    content: "";
+                    background: #e5e5e5;
+                }
+
+        .in-prd-menu {
+            margin-top: -77px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+        .clearfix:before, .clearfix:after {
+            display: table;
+            line-height: 0;
+            content: "";
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .in-prd-menu .hform {
+            float: right;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .in-prd-menu ul {
+            float: right;
+            margin: -10px 0 0 -10px;
+        }
+
+        .in-prd-menu li {
+            float: left;
+            list-style: none;
+        }
+
+            .in-prd-menu li.active a {
+                background-color: #104492;
+            }
+
+            .in-prd-menu li a {
+                display: block;
+                line-height: 44px;
+                font-size: 16px;
+                padding: 0 16px;
+                background-color: #363e45;
+                color: #fff;
+                margin: 10px 0 0 10px;
+                text-decoration: none;
+            }
+
+        .swiper-slide {
+            width: 100%;
+        }
+
+        .list-1 {
+            /*margin: -50px 0 0 -20px;*/
+            padding-bottom: 50px;
+            margin: 0px;
+        }
+
+        .clearfix:before, .clearfix:after {
+            display: table;
+            line-height: 0;
+            content: "";
+        }
+
+        .list-1 li {
+            float: left;
+            width: 33.333333%;
+            list-style: none;
+        }
+
+            .list-1 li a {
+                display: block;
+                padding: 20px 20px 50px;
+                background-color: #f0f0f0;
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s;
+                margin: 50px 0 0 20px;
+                position: relative;
+            }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .list-1 li .more {
+            border: 4px solid #f0f0f0;
+            background: #ffffff;
+            line-height: 48px;
+            width: 48px;
+            height: 48px;
+            text-align: center;
+            color: #b3b3b3;
+            font-size: 12px;
+            border-radius: 50%;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            position: absolute;
+            left: 50%;
+            bottom: -28px;
+            margin-left: -28px;
+        }
+
+        .section-title-1 {
+            text-align: center;
+            font-size: 0;
+        }
+
+
+            .section-title-1 h4:before {
+                left: 0;
+            }
+
+            .section-title-1 h4:after, .section-title-1 h4:before {
+                position: absolute;
+                content: '';
+                height: 1px;
+                width: 22px;
+                top: 50%;
+                background-color: #104492;
+            }
+
+            .section-title-1 h4 {
+                margin: 0;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 24px;
+                position: relative;
+                padding: 0 42px;
+                color: #104492;
+                margin-top: 20px;
+            }
+
+                .section-title-1 h4:after {
+                    right: 0;
+                }
+
+                .section-title-1 h4:after, .section-title-1 h4:before {
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    width: 22px;
+                    top: 50%;
+                    background-color: #104492;
+                }
+
+        .bgf {
+            width: 100%;
+            background-color: #f9f9f9;
+        }
+
+        .bgdf {
+            width: 100%;
+            background-color: #dfdfdf;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="download_head"></div>
+
+    <div style="width:1200px;margin:auto;margin-top:70px;">
+        <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"> <small>DOWNLOAD CENTER</small> <strong>下载中心</strong> </div>
+        <div class="in-prd-menu in-prd-menu-1 wow fadeInUp clearfix" style="visibility: visible; animation-name: fadeInUp;">
+            <ul>
+
+                @{
+                    List<crsri.cn.Model.t_web_subject_model> downloadSubject = ViewBag.subjectItems as List<crsri.cn.Model.t_web_subject_model>;
+                    if (ViewBag.sID == null)
+                    {
+                        <li class="active"><a href="/download/index">全部下载<i></i></a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/download/index">全部下载<i></i></a></li>
+                    }
+
+                    foreach (crsri.cn.Model.t_web_subject_model m in downloadSubject)
+                    {
+                        string curCssName = "";
+                        if (m.subjectID == ViewBag.sID)
+                        { curCssName = "active"; }
+                        <li class="@curCssName"><a href="/download/index/@m.subjectID">@m.subjectName<i></i></a></li>
+                    }
+                }
+
+            </ul>
+        </div>
+    </div>
+
+    @{
+        int i = 1;
+        foreach (crsri.cn.Model.reqDownload item in Model)
+        {
+            string cssName = i % 2 == 0 ? "bgf" : "bgdf";
+            <div class=@cssName>
+                <div class="section-title-1 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <h4>@item.subjectName</h4>
+                </div>
+                <div class="swiper-slide swiper-slide-active" style="width: 1200px; margin-right: 10px;margin:auto;">
+                    <ul class="list-1 clearfix">
+                        @foreach (crsri.cn.Model.t_web_downService_model m in item.downloadItems)
+                        {
+                            <li>
+                                <a href="/download/show/@inside.crsri.Utility.helper.UrlEncry(m.DSID)">
+                                    <div class="text">@m.DSName</div>
+                                    <div class="more">下载</div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+                        i++;
+        }
+    }
+
+    <div class="footerbox" style="background-color: #104492">
+        <div class="wid_main fix">
+            <div class="txt" style="margin:auto;text-align:center">
+                <p>主办：长江科学院信息中心</p>
+                <p>电话：82926349</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

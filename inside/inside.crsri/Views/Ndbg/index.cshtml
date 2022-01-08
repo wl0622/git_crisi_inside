@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout_NDBG.cshtml";
+}
+@*<div class="ndbg_lm">
+        <span>工作报告</span>
+    </div>*@
+<div class="w1200">
+    <div class="sciWrap_box">
+        <div class="sciWrap">
+            <ul class="clearfloat">
+                @foreach (crsri.cn.Model.t_web_article_model m in Model)
+                {
+
+                    <li>
+                        <div class="sciTime">
+                            <h3></h3>
+                        </div>
+                        <div class="sciInner">
+                            <h3><a href="/ndbg/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">@System.Web.HttpUtility.HtmlDecode(@m.title)</a></h3>
+                            <span>@Convert.ToDateTime(@m.releaseTime).ToString("yyyy-MM-dd")</span>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</div>

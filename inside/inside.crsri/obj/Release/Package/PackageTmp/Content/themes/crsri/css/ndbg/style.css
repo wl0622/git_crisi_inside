@@ -1,0 +1,199 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.ndbg_banner {
+    width: 1920px;
+    height: 200px;
+    background-image: url(/images/ndbg/ndbg_banner.png);
+}
+
+
+.ndbg_footer {
+    clear: both;
+    width: 1920px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #e71f19;
+    margin-top: 20px;
+}
+
+    .ndbg_footer span {
+        height: 30px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        display: block;
+    }
+
+.w1200 {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.ndbg_lm {
+    background: url(/images/ndbg/ndbg_showbanner.png) no-repeat;
+    width: 1280px;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+    .ndbg_lm span {
+        color: #fff;
+        font-size: 14px;
+        width: 80px;
+        font-weight: bold;
+        margin: auto;
+        display: block;
+    }
+
+
+.sciWrap_box {
+    background: url(/images/ndbg/ndbg_showbg.jpg) no-repeat;
+    padding:36px;
+}
+
+
+.sciWrap {
+    width: 1120px;
+    min-height: 700px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin:auto;
+    border:3px solid #fff;
+}
+
+    .sciWrap ul {
+        margin: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #fff;
+        width: 1060px;
+        margin: auto;
+    }
+
+        .sciWrap ul li {
+            width: 990px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 12px 10px 0px;
+            overflow: hidden;
+            border-bottom: 3px dotted #e8e8e8;
+        }
+
+
+
+
+            .sciWrap ul li:after {
+                display: block;
+                clear: both;
+                content: "";
+                overflow: hidden;
+            }
+
+.sciTime {
+    float: left;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-image: linear-gradient(#0058c5, #90c4f9);
+    background: url(/images/ndbg/report_icon.png) no-repeat center center;
+}
+
+    .sciTime h3 {
+        font-size: 20px;
+        height: 36px;
+        margin-top: 30px;
+    }
+
+
+.sciInner {
+    float: right;
+    width: 940px;
+    line-height: 40px;
+}
+
+    .sciInner h3 {
+        font-size: 16px;
+        font-weight: bold;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .sciInner span {
+        color: #999;
+        font-size: 14px;
+        float: right;
+        margin-right: 10px;
+    }
+
+
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+
+.fyconru {
+    width: 1200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.show_t {
+    text-align: center;
+    padding: 20px 0px 25px 0px;
+    border-bottom: 1px solid #e8e8e8;
+    background-color:#f5f5f5;
+}
+
+    .show_t h1 {
+        margin: 0;
+        font-size: 28px;
+        width: 816px;
+        margin: auto;
+        color: #0058c5;
+    }
+
+    .show_t span {
+        margin-left: 12px;
+    }
+
+
+
+    .show_t h5 {
+        color: #464646;
+        font-weight: normal;
+        line-height: 20px;
+        margin: 10px auto;
+        width: 180px;
+        height: 20px;
+        overflow: hidden;
+    }
+
+.show_c {
+    padding: 20px 0px 20px 0px;
+    color: #464646;
+    line-height: 35px;
+    width: 950px;
+    margin: auto;
+}
+
+.ndbg_cnt {
+    width: 1200px;
+    margin: auto;
+    min-height: 800px;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    /*box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;*/
+}

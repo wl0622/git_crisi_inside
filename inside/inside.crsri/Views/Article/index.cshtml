@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("GetTitleStyle", "DisplayLayout", new { name = "长江科学院内网-" + @System.Web.HttpUtility.HtmlDecode(@Model.title) })
+<body style="background:url(/images/sub/banner.png) no-repeat">
+    <div class="subbg">
+        <span class="sublogo"></span>
+    </div>
+    <!-- 主体内容框 -->
+    <div class="contentbox sub_cnt">
+        <div class="content">
+            <!-- 当前位置 -->
+            <div class="siteNav bdb_d fix showbg">
+                <div class="l fix zy_cur mb-10 mt-10">
+                    <div class="l tit"><img src="/images/icon_location.png"><b class="dib vm">当前位置：</b></div>
+                    <p class="l">
+                        <a href="/Home/">首页</a><a href="/Article/list/@Model.subjectID" id="curSubjectItem">
+                            @ViewBag.CurrentSubjectName
+                        </a><span>
+                            @System.Web.HttpUtility.HtmlDecode(@Model.title)
+                        </span>
+                    </p>
+                </div>
+                <!-- 时间 -->
+                @*<div class="timebox fc r">
+                <script type="text/javascript" src="js/show_date.js"></script>
+            </div>*@
+            </div>
+            <!-- 子页内容框 -->
+            <div class="zy_contentbox">
+                <!-- zy_content -->
+                <div class="zy_content fix">
+                    <div class="zy_conbox">
+                        <div class="zy_newsxq">
+                            <div class="xq_tit">
+                                <h1>@System.Web.HttpUtility.HtmlDecode(@Model.title)</h1>
+                                <p>
+                                    <span>文章来源：@Model.releaseDep </span>
+                                    <span>作者：@System.Web.HttpUtility.HtmlDecode(Model.author) </span>
+                                    <span>发布时间：@Convert.ToDateTime(@Model.releaseTime).ToString("yyyy-MM-dd")</span>
+                                </p>
+                            </div>
+                            <div class="txt">
+                                @Html.Raw(@System.Web.HttpUtility.HtmlDecode(@Model.content))
+                            </div>
+                        </div>
+                        <div class="zy_share">
+                              
+                                    <p>责任编辑: @Model.editor | 点击数：@Model.hits</p>
+
+                                
+                            </div>
+                    </div>
+
+                </div>
+                <!-- zy_content end -->
+            </div>
+            <!-- 内容框end -->
+        </div>
+    </div>
+
+
+    <!-- 图片 -->
+    <div class="sub_cnt_pic">
+        <div class="bd">
+            <!--通栏2图片 -->
+            <ul>
+                @{
+
+                    List<crsri.cn.Model.t_web_siteCfgPic_model> cfgPic = ViewBag.siteCfgPic as List<crsri.cn.Model.t_web_siteCfgPic_model>;
+                    var t3longPic = cfgPic.FindAll(a => a.isShortPic == false && a.position == 3);
+                    var t3shortPic = cfgPic.FindAll(a => a.isShortPic == true && a.position == 3);
+
+                    foreach (crsri.cn.Model.t_web_siteCfgPic_model m in t3longPic)
+                    {
+                        <li style='display: list-item'>
+                            <a href="@m.linkUrl" target="_blank"><img src="@inside.crsri.Utility.helper.sitePicPath/@m.picName" class='piclong'></a>
+                        </li>
+                    }
+
+
+                    for (int i = 0; i < t3shortPic.Count() / 2; i++)
+                    {
+                        var sPic = t3shortPic.Skip(i * 2).Take(2);
+
+                        <li>
+                            @foreach (crsri.cn.Model.t_web_siteCfgPic_model m in sPic)
+                            {
+                                <span>
+                                    <a href="@m.linkUrl" target="_blank"><img src="@inside.crsri.Utility.helper.sitePicPath/@m.picName" class="picshort"></a>
+                                </span>
+                            }
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        @*<script type="text/javascript">
+                jQuery(".flash2_pic").slide({ mainCell: ".bd ul", autoPlay: true, effect: "fade", mouseOverStop: false, interTime: 3000, });
+            </script>*@
+    </div>
+
+
+</body>

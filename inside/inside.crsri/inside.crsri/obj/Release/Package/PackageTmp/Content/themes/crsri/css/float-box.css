@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+
+
+
+.float-box {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    width: 90px;
+    z-index: 400;
+}
+
+    .float-box li {
+        overflow: hidden;
+        margin-top: 2px;
+    }
+
+        .float-box li a {
+            display: block;
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    .float-box img {
+        border-radius: 5px;
+    }
+
+
+.float-box-1 {
+    position: absolute;
+    left: -310px;
+    display: none;
+    top: 0px;
+}
+
+.float-box-2 {
+    position: absolute;
+    left: -310px;
+    display: none;
+    top: 92px;
+}
+
+.float-box-3 {
+    position: absolute;
+    left: -310px;
+    display: none;
+    top: 184px;
+}
+
+.float-box-4 {
+    position: absolute;
+    left: -610px;
+    display: none;
+    top: 184px;
+}

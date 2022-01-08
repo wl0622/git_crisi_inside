@@ -1,0 +1,107 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model List<inside.crsri.Utility.requestHomeArticleClass>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>中央财政科研项目资金管理政策</title>
+    <link rel="stylesheet" href="/Content/themes/crsri/css/zjgl/style.css" />
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="white_r">
+        <div class="content">
+            <ul>
+                <li class="flfg_icon"></li>
+                <li>
+                    <div class="list">
+                        <span class="tit">政策法规</span>
+                        <ul>
+                            @{
+                                var zcfg_Items = Model.FindAll(a => a.subjectID == "028001").First();
+                                foreach (inside.crsri.Utility.HomeArticleClass m in zcfg_Items.articleList)
+                                {
+                                    <li>
+                                        <i></i><span class="title">
+                                            <a target="_blank" href="/zjgl/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)">@System.Web.HttpUtility.HtmlDecode(@m.title)</a>
+                                        </span>
+                                        <span class="date">[@m.releaseTime]</span>
+                                    </li>
+
+                                }
+                            }
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="grey_r">
+        <div class="content">
+            <ul>
+
+                <li>
+                    <div class="list">
+                        <span class="tit">问题解答</span>
+                        <ul>
+                            @{
+                                var wtjd_Items = Model.FindAll(a => a.subjectID == "028002").First();
+                                foreach (inside.crsri.Utility.HomeArticleClass m in wtjd_Items.articleList)
+                                {
+                                    <li>
+                                        <i></i><span class="title">
+                                            <a target="_blank" href="/zjgl/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)">@System.Web.HttpUtility.HtmlDecode(@m.title)</a>
+                                        </span>
+                                        <span class="date">[@m.releaseTime]</span>
+                                    </li>
+
+                                }
+                            }
+                        </ul>
+                    </div>
+                </li>
+                <li class="wtjd_icon"></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="white_r">
+        <div class="content">
+            <ul>
+                <li class="qtzx_icon"></li>
+                <li>
+                    <div class="list">
+                        <span class="tit">其它资讯</span>
+                        <ul>
+                            @{
+                                var qtzxItems = Model.FindAll(a => a.subjectID == "028003").First();
+                                foreach (inside.crsri.Utility.HomeArticleClass m in qtzxItems.articleList)
+                                {
+                                    <li>
+                                        <i></i><span class="title">
+                                            <a target="_blank" href="/zjgl/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)">@System.Web.HttpUtility.HtmlDecode(@m.title)</a>
+                                        </span>
+                                        <span class="date">[@m.releaseTime]</span>
+                                    </li>
+
+                                }
+                            }
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_info">
+            <span>主办:长江科学院财务处</span><span>支持:长江科学院信息中心</span><span>电话:26360</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "show";
+    Layout = "~/Views/Shared/_Layout_JHXY.cshtml";
+}
+
+<div class="show">
+
+    <div class="show_cnt">
+        @Html.Raw(@System.Web.HttpUtility.HtmlDecode(@Model.content))
+    </div>
+</div>

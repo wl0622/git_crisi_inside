@@ -1,0 +1,98 @@
+﻿.mainContent {
+    font-family: "times new roman";
+}
+
+.enNewsHead {
+    width: 1360px;
+    margin: auto;
+    height: 110px;
+    background-color: #fff;
+    /*background-color: rgb(29, 127, 214);*/
+    background-image: url(/images/en/enlogo.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.enNewHead_icon {
+    background-image: url(/images/en/header-bk.png);
+    background-repeat: no-repeat;
+    width: 152px;
+    height: 110px;
+    display: block;
+    float: right;
+}
+
+.enNav_box {
+    height: 50px;
+    line-height: 25px;
+    background: url(/images/en/nav-bgc.png) repeat-x;
+    border-bottom: 2px solid rgb(255, 196, 61);
+}
+
+.enNav {
+    width: 1360px;
+    margin: auto;
+    text-align: center;
+}
+
+.enContent {
+    min-height: 730px;
+    background-color: #fff;
+    width: 1360px;
+    margin: auto;
+}
+
+.w_circle {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: block;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+.english_list {
+    font-size: 16px;
+}
+
+    .english_list ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .english_list ul li {
+            list-style-type: none;
+            height: 35px;
+            line-height: 35px;
+            padding: 10px 20px 10px 20px;
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+            .english_list ul li b {
+                color: #666;
+                display: inline-block;
+                margin-right: 7px;
+                vertical-align: middle;
+            }
+
+            .english_list ul li a {
+                color: #333;
+                transition: all .3s;
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 900px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-width: 1200px;
+            }
+
+
+
+            .english_list ul li span {
+                float: right;
+                color: #999;
+                font-size: 14px;
+            }

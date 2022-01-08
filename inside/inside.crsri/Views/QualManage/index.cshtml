@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+@model List<crsri.cn.Model.t_web_qualManage_model>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>质量管理</title>
+    <link rel="stylesheet" href="/Content/themes/crsri/css/page.css" />
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: SimSun;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="qualbanner">
+        <span>质量管理体系成文信息</span>
+    </div>
+    <div class="qual_nav"></div>
+    <div class="container">
+        <div class="ct2 ">
+            <div class="ct2-sd">
+                <div class="panel-sd">
+                    <div class="tit">质量管理<span>Quality Manage</span></div>
+                    <ul>
+                        @{
+                            List<crsri.cn.Model.t_web_subject_model> reqSubjectItems = ViewBag.ManageSubject;
+                            foreach (crsri.cn.Model.t_web_subject_model m in reqSubjectItems)
+                            {
+                                string cssName = ViewBag.QMSubjectID == m.subjectID ? "cur" : "";
+                                <li>
+                                    <span class="box_outside">
+                                        <span class="box_inside">
+                                            <img src="/images/r_arrow_black.png">  <a href="/qualmanage/index/@m.subjectID" target="_blank" class="@cssName">@m.subjectName</a>
+                                        </span>
+                                    </span>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="ct2-mn">
+                <div class="news">
+                    <div class="new_m">
+
+                        @{
+                            foreach (crsri.cn.Model.t_web_qualManage_model m in Model)
+                            {
+                                string time = m.updateTime != null ? m.updateTime.ToString().Substring(0, 10) : "";
+                                <div class="n_m">
+                                    <div class="title">
+                                        <span>@time</span>
+                                        <a  onclick="javascript:alert('稍后配置下载路径')">@m.accName</a> @*href="/后台路径/ueditor/1.4.3/net/@m.accUrl"*@
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:80px;clear:both;"></div>
+</body>
+</html>

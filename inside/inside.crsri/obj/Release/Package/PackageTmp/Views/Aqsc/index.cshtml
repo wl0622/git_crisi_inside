@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout_AQSC.cshtml";
+}
+@model List<inside.crsri.Utility.requestHomeArticleClass>
+<div class="l ml_30">
+    <div class="lbox_1">
+        <div class="wjdd_box mt_100">
+            <div class="wjdd_box_head">
+                <h3 class="icon_tit hexagon_icon">  文</h3>
+                <h3 class="icon_tit hexagon_icon">  件</h3>
+                <h3 class="icon_tit hexagon_icon">  导</h3>
+                <h3 class="icon_tit hexagon_icon">  读</h3>
+            </div>
+            <div class="more"><a href="/aqsc/list/007002" target="_blank">更多...</a></div>
+            <div class="listItem">
+                <ul>
+                    @{
+                        var wjdd_Items = Model.FindAll(a => a.subjectID == "007002").First();
+                        foreach (inside.crsri.Utility.HomeArticleClass m in wjdd_Items.articleList.Take(8))
+                        {
+                            <li>
+                                <span class="listItem_title">
+                                    <a href="/aqsc/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                        <span class="listItem_date r">[@m.releaseTime.Substring(5, 5)]</span><span>@System.Web.HttpUtility.HtmlDecode(@m.title)</span>
+                                    </a>
+                                </span>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="ztxw_box ml_10 mt_100">
+            <div class="ztxw_box_head">
+                <h3>主题新闻</h3>
+            </div>
+            <div class="more2"><a href="/aqsc/list/007001" target="_blank">更多...</a> </div>
+            <div class="listItem">
+                <ul>
+                    @{
+                        var ztxw_Items = Model.FindAll(a => a.subjectID == "007001").First();
+                        foreach (inside.crsri.Utility.HomeArticleClass m in ztxw_Items.articleList.Take(8))
+                        {
+                            <li>
+                                <span class="listItem_title">
+                                    <a href="/aqsc/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                        <span class="listItem_date r">[@m.releaseTime.Substring(5, 5)]</span><span>@System.Web.HttpUtility.HtmlDecode(@m.title)</span>
+                                    </a>
+                                </span>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="lbox_1">
+        <div class="wjdd_box mt_35">
+            <div class="wjdd_box_head">
+                <h3 class="icon_tit fivestar_icon">  安</h3>
+                <h3 class="icon_tit fivestar_icon">  全</h3>
+                <h3 class="icon_tit fivestar_icon">  常</h3>
+                <h3 class="icon_tit fivestar_icon">  识</h3>
+            </div>
+            <div class="more"><a href="/aqsc/list/007003" target="_blank">更多...</a></div>
+            <div class="listItem">
+                <ul>
+                    @{
+                        var aqcs_Items = Model.FindAll(a => a.subjectID == "007003").First();
+                        foreach (inside.crsri.Utility.HomeArticleClass m in aqcs_Items.articleList.Take(8))
+                        {
+                            <li>
+                                <span class="listItem_title">
+                                    <a href="/aqsc/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                        <span class="listItem_date r">[@m.releaseTime.Substring(5, 5)]</span><span>@System.Web.HttpUtility.HtmlDecode(@m.title)</span>
+                                    </a>
+                                </span>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="ztxw_box ml_10 mt_35">
+            <div class="ztxw_box_head">
+                <h3>法律法规</h3>
+            </div>
+            <div class="more2"><a href="/aqsc/list/007005" target="_blank">更多...</a></div>
+            <div class="listItem">
+                <ul>
+                    @{
+                        var flfg_Items = Model.FindAll(a => a.subjectID == "007005").First();
+                        foreach (inside.crsri.Utility.HomeArticleClass m in flfg_Items.articleList.Take(8))
+                        {
+                            <li>
+                                <span class="listItem_title">
+                                    <a href="/aqsc/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                        <span class="listItem_date r">[@m.releaseTime.Substring(5, 5)]</span><span>@System.Web.HttpUtility.HtmlDecode(@m.title)</span>
+                                    </a>
+                                </span>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="lbox_1">
+        <div class="zw_box mt_35">
+            <div class="zw_box_head">
+                <h3>安全生产月征文</h3>
+            </div>
+            <div class="more3"><a href="/aqsc/list/007006" target="_blank">更多...</a></div>
+            <div class="listItem_single">
+                <ul>
+                    @{
+                        var zw_Items = Model.FindAll(a => a.subjectID == "007006").First();
+                        foreach (inside.crsri.Utility.HomeArticleClass m in zw_Items.articleList.Take(8))
+                        {
+                            <li>
+                                <span class="listItem_single_title"><a href="/aqsc/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">@System.Web.HttpUtility.HtmlDecode(@m.title)</a></span>
+                                <span class="listItem_single_date r">[@m.releaseTime.Substring(5, 5)]</span>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="lbox_1">
+        <div class="zw_box mt_35" style="height:170px;border:none">
+            <div class="zw_box_head">
+                <h3>安全生产月动画</h3>
+            </div>
+
+            <div class="listItem_pic">
+                <ul>
+                    <li>
+                        <img src="/images/aqsc/1.jpg" />
+                        <span><a href="http://10.6.66.100:8001/anquan/images/yh.swf" target="_blank">你注意到身边的隐患了吗</a></span>
+                    </li>
+                    <li>
+                        <img src="/images/aqsc/hcts.jpg">
+                        <span><a href="http://10.6.66.100:8001/anquan/images/hcts.sw" target="_blank">模拟火场逃生训练</a></span>
+                    </li>
+                    <li>
+                        <img src="/images/aqsc/mhq.jpg" />
+                        <span><a href="http://10.6.66.100:8001/anquan/images/mhq.sw" target="_blank">灭火器使用介绍</a></span>
+                    </li>
+                    <li>
+                        <img src="/images/aqsc/zmb.jpg">
+                        <span><a href="http://10.6.66.100:8001/anquan/images/zmb.sw" target="_blank">遇到火灾怎么办</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flink">
+        <ul>
+            <li><a href="http://www.safety.com.cn" target="_blank">中国安全网</a> </li>
+            <li><a href="http://www.anquan.com.cn/index.html" target="_blank">安全文化网</a></li>
+            <li><a href="http://www.xjepc.com/flashmch/default.asp" target="_blank">安全生产电脑动化集锦</a></li>
+            <li><a href="http://www.cjw.com.cn/news/anquan/anquan.asp" target="_blank">长江委安全生产网</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="l mt_100">
+    <div class="rPic">
+        <ul>
+            <li>
+                <img src="/images/aqsc/11.png" />
+            </li>
+            <li>
+                <img src="/images/aqsc/22.png" />
+            </li>
+            <li>
+                <img src="/images/aqsc/33.png" />
+            </li>
+            <li>
+                <img src="/images/aqsc/44.png" />
+            </li>
+        </ul>
+    </div>
+</div>

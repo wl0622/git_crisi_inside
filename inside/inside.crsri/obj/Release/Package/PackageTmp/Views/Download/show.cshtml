@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+@model crsri.cn.Model.t_web_downService_model
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>软件下载中心</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="/Content/themes/crsri/css/page.css" />
+    <link rel="stylesheet" href="/Content/themes/crsri/css/footerbox.css" />
+
+</head>
+<body>
+    <div class="download_head"></div>
+    <!-- 主体内容框 -->
+    <div class="contentbox wid_main bora_5 backshadow">
+        <div class="content" style="padding:0px;">
+            <!-- 当前位置 -->
+            <div class="siteNav bdb_d fix">
+                <div class="txtScroll-top l fix zy_cur mb-10 mt-10">
+                    <div class="l tit"><img src="/images/icon_location.png"><b class="dib vm">当前位置：</b></div>
+                    <p class="l">
+                        <a href="/Home/">首页</a><a href="/download/index">
+                            下载中心
+                        </a><span>
+                            @System.Web.HttpUtility.HtmlDecode(@Model.DSName)
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <!-- 子页内容框 -->
+            <div class="zy_contentbox">
+                <!-- zy_content -->
+                <div class="zy_content fix">
+
+                    <div class="zy_conbox">
+                        <div class="zy_newsxq">
+                            <div class="xq_tit bdb_d">
+                                <h1>@System.Web.HttpUtility.HtmlDecode(@Model.DSName)</h1>
+                                <p>
+                                    <span>文章来源：@Model.releaseDep </span>
+                                    <span>作者：@System.Web.HttpUtility.HtmlDecode(Model.author) </span>
+                                    <span>发布时间：@Convert.ToDateTime(@Model.releaseTime).ToString("yyyy-MM-dd")</span>
+                                </p>
+                            </div>
+                            <div class="txt">
+                                @Html.Raw(@System.Web.HttpUtility.HtmlDecode(@Model.content))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 内容框end -->
+
+        </div>
+    </div>
+    <div class="footerbox bg">
+        <div class="wid_main fix">
+            <div class="txt" style="margin:auto;text-align:center">
+                <p>主办：长江科学院信息中心</p>
+                <p>电话：82926349</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "show";
+    Layout = "~/Views/Shared/_Layout_DJZC.cshtml";
+}
+
+@model crsri.cn.Model.t_web_article_model
+<div class="mainCntPage">
+    <div class="fyconru">
+        <div class="show_t">
+            <h1>@System.Web.HttpUtility.HtmlDecode(@Model.title)</h1>
+            <div style="padding-top: 20px; width:880px;margin:auto;">
+                <span>文章来源：@Model.releaseDep </span>
+                <span>作者：@System.Web.HttpUtility.HtmlDecode(Model.author) </span>
+                <span>发布时间：@Convert.ToDateTime(@Model.releaseTime).ToString("yyyy-MM-dd")</span>
+            </div>
+
+        </div>
+        <div class="show_c" style="font-size:16px;">
+            @Html.Raw(@System.Web.HttpUtility.HtmlDecode(@Model.content))
+        </div>
+
+    </div>
+</div>

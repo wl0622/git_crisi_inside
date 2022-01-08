@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "list";
+    Layout = "~/Views/Shared/_Layout_LZJS.cshtml";
+}
+@model List<crsri.cn.Model.t_web_article_model>
+<div style="width:1920px;margin:auto;min-height:1000px;">
+
+    <div style="width:1178px; height:40px; line-height:40px; background-image: url(/images/lzjs/listTitBg.png); background-repeat:no-repeat; margin:auto; background-position:left center; position:relative;top:35px;">
+        <span style="height:50px;margin-left:86px;color:#fff;font-weight:bold">
+            @{
+                List<crsri.cn.Model.t_web_special_model> lzjsItems = ViewBag.lzjsItems as List<crsri.cn.Model.t_web_special_model>;
+                string curId = ViewBag.specialID;
+                <label style="color: #fedf22;">@lzjsItems.FindAll(a => a.specialID == curId).First().specialName</label>
+            }
+        </span>
+    </div>
+
+    <div class="list_table">
+        <ul>
+            @{
+
+                foreach (crsri.cn.Model.t_web_article_model m in Model)
+                {
+            <li>
+                <span class="list_table_title">
+                    <a href="/lzjs/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                        <span class="listItem_date r">@Convert.ToDateTime(@m.releaseTime).ToString("yyyy-MM-dd")</span><span style="color:#333333;">@System.Web.HttpUtility.HtmlDecode(@m.title)</span>
+                    </a>
+                </span>
+            </li>
+                }
+            }
+        </ul>
+    </div>
+
+    <div class="fenye">
+
+        @{
+            int pageSize = 15;
+            int totalCount = Convert.ToInt32(ViewBag.totalCount);
+            int maxPage = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
+
+            if (maxPage > 1)
+            {
+                int curPage = Convert.ToInt32(ViewBag.currentPage);
+                int showPage = maxPage < 3 ? maxPage : 3;
+                List<int> txtPageNum = new List<int>();
+                if (maxPage <= showPage)
+                {
+                    for (int i = 1; i <= maxPage; i++)
+                    {
+                        txtPageNum.Add(i);
+                    }
+                }
+                else
+                {
+                    int startNum = curPage > 2 ? curPage - 2 : 1;
+
+                    for (int i = startNum; i <= startNum + 2; i++)
+                    {
+                        txtPageNum.Add(i);
+                    }
+
+
+                }
+
+                int prePage = curPage - 1;
+                int nextPage = curPage + 1;
+                int hidePage = txtPageNum.Last();
+
+                string htmlPre = string.Format("<a href='/lzjs/list/{0}/{1}'>上一页</a>", Model.First().specialID, prePage == 0 ? 1 : prePage);
+                string htmlNext = string.Format("<a href='/lzjs/List/{0}/{1}'>下一页</a>", Model.First().specialID, nextPage > maxPage ? maxPage : nextPage);
+                string htmlInfo = string.Format("<span>共{0}页</span>", maxPage);
+                string htmlGo = string.Format("<span>转到第<input type='text'>页</span><a href='javascript:goPage();' class='ok'>确定</a></div>");
+
+        @Html.Raw(htmlPre);
+
+                                          foreach (int num in txtPageNum)
+                                          {
+                                              if (num == curPage)
+                                              {
+        @Html.Raw(string.Format("<a href='/lzjs/list/{0}/{1}' class='current'>{1}</a>", Model.First().specialID, num));
+                                              }
+                                              else
+                                              {
+        @Html.Raw(string.Format("<a href='/lzjs/list/{0}/{1}'>{1}</a>", Model.First().specialID, num));
+                                              }
+                                          }
+        <a href="/Article/List/@Model.First().specialID/@hidePage">...</a>
+        <a href="/Article/List/@Model.First().specialID/@maxPage">@maxPage</a>
+
+        @Html.Raw(htmlNext);
+        @*<p>
+                @Html.Raw(htmlGo);
+            </p>*@
+            }
+
+        }
+    </div>
+
+</div>

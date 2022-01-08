@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            //导航切换
+            $(".menuson li").click(function () {
+                $(".menuson li.active").removeClass("active")
+                $(this).addClass("active");
+            });
+
+            $('.title').click(function () {
+                var $ul = $(this).next('ul');
+                $('dd').find('ul').slideUp();
+                if ($ul.is(':visible')) {
+                    $(this).next('ul').slideUp();
+                } else {
+                    $(this).next('ul').slideDown();
+                }
+            });
+        })
+    </script>
+</head>
+
+<body style="background-image: url(images/main/menu_bg.gif)">
+    <div class="lefttop"></div>
+    <dl class="leftmenu">
+        <dd>
+            <div class="title">
+                <span><img src="images/leftico01.png" /></span>系统管理
+            </div>
+            <ul class="menuson">
+                <li class="active"><cite></cite><a href="aspx/index.aspx" target="rightFrame">网站设置</a><i></i></li>
+                <li><cite></cite><a href="aspx/userlist.aspx" target="rightFrame">帐号列表</a><i></i></li>
+                <li><cite></cite><a href="aspx/userright.aspx" target="rightFrame">权限配置</a><i></i></li>
+                <li><cite></cite><a href="aspx/userlog.aspx" target="rightFrame">帐号日志</a><i></i></li>
+                <li><cite></cite><a href="aspx/userpwd.aspx" target="rightFrame">密码修改</a><i></i></li>
+                <li><cite></cite><a href="aspx/releasearticle.aspx" target="_blank">发布新文章</a><i></i></li>
+                <li><cite></cite><a href="aspx/articlelist.aspx" target="rightFrame">文章搜索</a><i></i></li>
+                <li><cite></cite><a href="aspx/articlelist.aspx?passed=0" target="rightFrame">新文章审核</a><i></i></li>
+                <!--<li><cite></cite><a href="aspx/homepiconfig.aspx" target="rightFrame">通栏与栏目图片</a><i></i></li>-->
+                <li><cite></cite><a href="aspx/otherpicconfig.aspx" target="rightFrame">新闻与产品图片</a><i></i></li>
+
+                <!--<li><cite></cite><a href="aspx/navmenuconfig.aspx" target="rightFrame">导航菜单</a><i></i></li>
+                <li><cite></cite><a href="aspx/zhuangjia.aspx" target="rightFrame">专家教授</a><i></i></li>
+                <li><cite></cite><a href="aspx/chengguo.aspx" target="rightFrame">获奖成果</a><i></i></li>-->
+            </ul>
+        </dd>
+        <!--<dd>
+            <div class="title">
+                <span><img src="images/leftico02.png" /></span>内容发布管理
+            </div>
+            <ul class="menuson">
+                <li><cite></cite><a href="aspx/releasearticle.aspx" target="rightFrame">发布新文章</a><i></i></li>
+                <li><cite></cite><a href="aspx/articlelist.aspx" target="rightFrame">文章搜索</a><i></i></li>
+                <li><cite></cite><a href="aspx/articlelist.aspx?passed=0" target="rightFrame">新文章审核</a><i></i></li>
+                <li><cite></cite><a href="aspx/chengguo.aspx" target="rightFrame">获奖成果</a><i></i></li>
+            </ul>
+        </dd>-->
+        <!--<dd>
+            <div class="title">
+                <span><img src="images/leftico02.png" /></span>网站配置管理
+            </div>
+            <ul class="menuson">
+                <li><cite></cite><a href="aspx/homepiconfig.aspx" target="rightFrame">通栏与栏目图片</a><i></i></li>
+                <li><cite></cite><a href="aspx/otherpicconfig.aspx" target="rightFrame">其它图片</a><i></i></li>
+                <li><cite></cite><a href="aspx/navmenuconfig.aspx" target="rightFrame">导航菜单</a><i></i></li>
+                <li><cite></cite><a href="aspx/homesubjectconfig.aspx" target="rightFrame">栏目名称配置</a><i></i></li>
+                <li><cite></cite><a href="aspx/homesubjectconfig.aspx" target="rightFrame">获奖成果配置</a><i></i></li>
+            </ul>
+        </dd>-->
+    </dl>
+</body>
+</html>

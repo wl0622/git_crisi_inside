@@ -1,0 +1,207 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_GJHZ.cshtml";
+}
+@model List<inside.crsri.Utility.requestHomeArticleClass>
+<div style="width:1400px;margin:auto;text-align:center;background-color:#fff;">
+
+    <div class="notice">
+        <div class="notice_title">
+            <span class="notice_title_text">
+                通知公告
+            </span>
+            <span class="notice_title_more">
+                <a href="/gjhz/list/034004" target="_blank"> 查看更多>></a>
+            </span>
+        </div>
+        <div class="noticle_list">
+            <ul>
+                @{
+                    var tzgg_Items = Model.FindAll(a => a.subjectID == "034004").First();
+                    foreach (inside.crsri.Utility.HomeArticleClass m in tzgg_Items.articleList.Take(6))
+                    {
+                        <li>
+                            <span class="noticle_list_text">
+                                <span style="color:#005ca2;font-size:14px">[@m.releaseTime]</span>
+                                <a href="/gjhz/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                    @System.Web.HttpUtility.HtmlDecode(@m.title)
+                                </a>
+                            </span>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="cnt">
+        <div class="cnt_left">
+            <div class="lm_1">
+
+                <div class="lm_1_content">
+                    <div class="gjhz_flash">
+                        <div class="slideBox">
+
+                            @{
+                                List<crsri.cn.Model.t_web_article_model> picXwItems = ViewBag.picxw as List<crsri.cn.Model.t_web_article_model>;
+                            }
+                            <div class="hd">
+                                <ul>
+                                    @for (int i = 1; i <= 3; i++)
+                                    {
+                                        <li>@i</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="bd">
+                                <ul>
+
+                                    @for (int i = 0; i < 3; i++)
+                                    {
+                                        <li>
+                                            <a href="/Gjhz/show/@inside.crsri.Utility.helper.UrlEncry(@picXwItems[i].articleID)" target="_blank">
+                                                <img src="@inside.crsri.Utility.helper.sitePicPath/@picXwItems[i].defaultPicUrl.Replace(" .. /", "")" />
+                                                <div><span class="title">@System.Web.HttpUtility.HtmlDecode(@picXwItems[i].title)</span></div>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(".slideBox").slide({
+                                effect: "fold",//left,
+                                mainCell: ".bd ul",
+                                autoPlay: true,
+                                delayTime: 1000,
+                                interTime: 5000
+                            });
+                        </script>
+                    </div>
+
+                    <div class="gjhz_flash_list">
+                        <div class="lm_1_head">
+                            <span class="lm_text">院内国际合作新闻</span>
+                            <a class="lm_more" href="/gjhz/list/034001" target="_blank"> </a>
+                        </div>
+                        <ul>
+
+                            @{
+                                var ynxw_Items = Model.FindAll(a => a.subjectID == "034001").First();
+                                foreach (inside.crsri.Utility.HomeArticleClass m in ynxw_Items.articleList.Take(7))
+                                {
+
+                                    <li>
+                                        <i></i><a href="/gjhz/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                            @System.Web.HttpUtility.HtmlDecode(@m.title)
+                                        </a>
+                                    </li>
+
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 1009px; height: 200px; background-image: url(/images/gjhz/gjhzcenter.png)"></div>
+
+            <div class="lm_2">
+                <div class="lm_2_box">
+                    <div class="lm_2_head">
+                        <span class="lm_text">院外国际合作新闻</span>
+                        <a class="lm_more" href="/gjhz/list/034002" target="_blank"> </a>
+                    </div>
+                    <div class="lm_2_list">
+                        <ul>
+                            @{
+                                var ywxw_Items = Model.FindAll(a => a.subjectID == "034002").First();
+                                foreach (inside.crsri.Utility.HomeArticleClass m in ywxw_Items.articleList.Take(9))
+                                {
+                                    <li>
+                                        <i></i>
+                                        <span class="title">
+                                            <a href="/gjhz/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                                @System.Web.HttpUtility.HtmlDecode(@m.title)
+                                            </a>
+                                        </span><span class="date">[@m.releaseTime.Substring(5, 5)]</span>
+                                    </li>
+
+                                }
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="lm_2_box" style="margin-left:29px;">
+                    <div class="lm_2_head">
+                        <span class="lm_text">出国政策</span>
+                        <a class="lm_more" href="/gjhz/list/034003" target="_blank"> </a>
+                    </div>
+                    <div class="lm_2_list">
+                        <ul>
+                            @{
+                                var cgzc_Items = Model.FindAll(a => a.subjectID == "034003").First();
+                                foreach (inside.crsri.Utility.HomeArticleClass m in cgzc_Items.articleList.Take(9))
+                                {
+                                    <li>
+                                        <i></i>
+                                        <span class="title">
+                                            <a href="/gjhz/show/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)" target="_blank">
+                                                @System.Web.HttpUtility.HtmlDecode(@m.title)
+                                            </a>
+                                        </span><span class="date">[@m.releaseTime.Substring(5, 5)]</span>
+                                    </li>
+
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="cnt_right">
+            <ul>
+                <li>
+                    <span class="gjhz_right_head">
+                        <span class="gjhz_right_title gjhz_r_apply_icon">
+                            国际项目申请
+                        </span>
+                    </span>
+
+                    <img src="/images/gjhz/apply.gif" />
+
+                </li>
+                <li>
+                    <span class="gjhz_right_head">
+                        <span class="gjhz_right_title gjhz_r_global_icon">
+                            国际组织
+                        </span>
+                    </span>
+                    <span><img src="/images/gjhz/global.gif" /> </span>
+                </li>
+                <li><span><img src="/images/gjhz/YDYL1.jpg" /> </span></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    <div class="link_head">
+        <div class="link_text">相关链接</div>
+    </div>
+    <div class="link_list">
+        <ul>
+            <li>国际水利工程与研究协会(IAHR)</li>
+            <li>国际大坝委员会(ICOLD)</li>
+            <li>联合国教科文组织(UNESCO)</li>
+            <li>国际小水电网(IN-SHP)</li>
+            <li>世界气象组织(WMO)</li>
+            <li>亚洲发展银行</li>
+            <li>世界银行</li>
+            <li>全球水伙伴(GWP)</li>
+            <li>国际水文科学协会(IAHS)</li>
+            <li>国家留学网</li>
+        </ul>
+    </div>
+
+</div>

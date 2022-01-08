@@ -1,0 +1,13 @@
+﻿@charset "UTF-8";
+
+@font-face {
+  font-family: "HYZHONGYUANJ";
+  src: url("HYZHONGYUANJ.woff2") format("woff2"),
+       url("HYZHONGYUANJ.woff") format("woff"),
+       url("HYZHONGYUANJ.ttf") format("truetype"),
+       url("HYZHONGYUANJ.eot") format("embedded-opentype"),
+       url("HYZHONGYUANJ.svg") format("svg"),
+       url("HYZHONGYUANJ.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

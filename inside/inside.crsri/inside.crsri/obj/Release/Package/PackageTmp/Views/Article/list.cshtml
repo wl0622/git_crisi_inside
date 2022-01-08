@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("GetTitleStyle", "DisplayLayout", new { name = "长江科学院-" + @System.Web.HttpUtility.HtmlDecode(@ViewBag.subjectName) })
+@model List<crsri.cn.Model.t_web_article_model>
+<script type="text/javascript">
+    function goPage() {
+
+        var inputDigit = $(".fanye").find(":input").val();
+        let reg = /^\d/;
+        if (reg.test(inputDigit)) {
+
+            var url = window.location.href;
+            var lastnum = url.substring(url.lastIndexOf("/") + 1);
+            var goUrl = lastnum.length == 6 ? url + "/1" : url.substring(0, url.lastIndexOf("/")) + "/" + inputDigit;
+            console.log(goUrl);
+            window.location.href = goUrl;
+        }
+    }
+</script>
+<style type="text/css">
+    .zy_cur a, .zy_cur span {
+        color: #fff;
+    }
+</style>
+
+<div class="contentbox wid_main backshadow">
+
+    <!-- 当前位置 -->
+    <div class="siteNav bdb_d fix  navbg">
+        <div class="l fix zy_cur mb-10">
+            <div class="l tit mt-10 pl-10"><img src="/images/icon_location_w.png"><b class="dib vm color_w">当前位置：</b></div>
+            <p class="l mt-10"><a href="/Home/index">首页</a><a><span>@ViewBag.subjectName</span></a></p>
+        </div>
+
+        <!-- 时间 -->
+        @*<div class="timebox fc r">
+                <script type="text/javascript" src="js/show_date.js"></script>
+            </div>*@
+    </div>
+
+<!-- 子页内容框 -->
+<div class="zy_contentbox">
+    <!-- zy_content -->
+    <div class="zy_content fix">
+        <!-- 左边栏 -->
+        <div class="zy_left_con">
+            <b></b>
+            <!-- 二级菜单 -->
+            <div class="zy_twonav">
+                <h2 class="tit">新闻中心</h2>
+                <ul>
+                    @{
+
+    var subjects = ViewBag.SubjectItems as List<crsri.cn.Model.t_web_subject_model>;
+    foreach (crsri.cn.Model.t_web_subject_model s in subjects)
+    {
+        if (@s.subjectName == @ViewBag.subjectName)
+        {
+            <li class="cur"> <a href="/Article/list/@s.subjectID">@s.subjectName</a></li>
+        }
+        else
+        {
+            <li><a href="/Article/list/@s.subjectID">@s.subjectName</a></li>
+        }
+    }
+}
+</ul>
+</div>
+
+</div>
+
+<!-- 右边内容 -->
+<div class="zy_right_con">
+    <!-- 当前位置 -->
+    <div class="zy_title fix">
+        <h2>@ViewBag.subjectName<i></i></h2>
+</div>
+<!-- 内容展示块-->
+<div class="news_list zy_listbox">
+
+    <ul>
+        @{
+    foreach (crsri.cn.Model.t_web_article_model m in Model)
+    {
+        <li><b>·</b><a href="/Article/index/@inside.crsri.Utility.helper.UrlEncry(@m.articleID)">@System.Web.HttpUtility.HtmlDecode(@m.title)</a><span>[@Convert.ToDateTime(@m.releaseTime).ToString("yyyy-MM-dd").Substring(5)]</span></li>
+    }
+}
+</ul>
+
+<div class="fanye" style="text-align: left;">
+    @{
+    int pageSize = 15;
+    int totalCount = Convert.ToInt32(ViewBag.totalCount);
+    int maxPage = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
+
+    if (maxPage > 1)
+    {
+        int curPage = Convert.ToInt32(ViewBag.currentPage);
+        int showPage = maxPage < 3 ? maxPage : 3;
+        List<int> txtPageNum = new List<int>();
+        if (maxPage <= showPage)
+        {
+            for (int i = 1; i <= maxPage; i++)
+            {
+                txtPageNum.Add(i);
+            }
+        }
+        else
+        {
+            int startNum = curPage > 2 ? curPage - 2 : 1;
+
+            for (int i = startNum; i <= startNum + 2; i++)
+            {
+                txtPageNum.Add(i);
+            }
+
+
+        }
+
+        int prePage = curPage - 1;
+        int nextPage = curPage + 1;
+        int hidePage = txtPageNum.Last() + 1;
+
+        string htmlPre = string.Format("<a href='/Article/list/{0}/{1}'>上一页</a>", Model.First().subjectID, prePage == 0 ? 1 : prePage);
+        string htmlNext = string.Format("<a href='/Article/List/{0}/{1}'>下一页</a>", Model.First().subjectID, nextPage > maxPage ? maxPage : nextPage);
+        string htmlInfo = string.Format("<span>共{0}页</span>", maxPage);
+        string htmlGo = string.Format("<span>转到第<input type='text'>页</span><a href='javascript:goPage();' class='ok'>确定</a></div>");
+
+        @Html.Raw(htmlPre);
+    <div id="pages">
+        @foreach (int num in txtPageNum)
+{
+    if (num == curPage)
+    {
+        @Html.Raw(string.Format("<a href='/Article/list/{0}/{1}' class='current'>{1}</a>", Model.First().subjectID, num));
+    }
+    else
+    {
+        @Html.Raw(string.Format("<a href='/Article/list/{0}/{1}'>{1}</a>", Model.First().subjectID, num));
+    }
+}
+<a href="/Article/List/@Model.First().subjectID/@hidePage">...</a>
+<a href="/Article/List/@Model.First().subjectID/@maxPage">@maxPage</a>
+</div>
+    @Html.Raw(htmlNext);
+    <p>
+        @Html.Raw(htmlGo);
+</p>
+    }
+
+}
+
+</div>
+<!-- 通用分页end -->
+</div>
+</div>
+</div>
+<!-- zy_content end -->
+</div>
+<!-- 内容框end -->
+<!-- 友情链接 -->
+
+
+</div>
+
